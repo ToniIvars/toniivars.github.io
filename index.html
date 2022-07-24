@@ -12,15 +12,13 @@
 
   <link href="index.css" rel="stylesheet" />
   <script src="index.js" defer></script>
-
-  <script src="https://kit.fontawesome.com/4e33fdf0b5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav id="navbar">
-    <a class="nav-link selected" href="#about-me">About me</a>
-    <a class="nav-link" href="#techs">Technologies</a>
-    <a class="nav-link" href="#projects">Projects</a>
+    <a data-section="about-me" class="nav-link selected" href="#about-me">About me</a>
+    <a data-section="techs" class="nav-link" href="#techs">Technologies</a>
+    <a data-section="projects" class="nav-link" href="#projects">Projects</a>
   </nav>
 
   <div class="section" id="about-me">
@@ -34,7 +32,7 @@
           projects I have made!
         </p>
         <a href="https://github.com/ToniIvars/" target="_blank" rel="noopener noreferrer" id="find-me">
-          Find me on <i class="fa-brands fa-github"></i>
+          Find me on <img class="github-icon" src="images/github-icon.svg" alt="GitHub" />
         </a>
       </div>
     </div>

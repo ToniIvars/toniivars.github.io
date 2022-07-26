@@ -1,1 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" overflow="visible" fill="#092e20"><path d="M27.724 0H38.2v48.44c-5.368 1.02-9.3 1.427-13.6 1.427-12.776 0-19.435-5.776-19.435-16.853 0-10.67 7.068-17.6 18.008-17.6 1.7 0 3 .135 4.553.543zm0 24.383c-1.223-.407-2.242-.543-3.533-.543-5.3 0-8.36 3.262-8.36 8.97 0 5.573 2.922 8.63 8.3 8.63 1.155 0 2.106-.068 3.6-.27zm27.113-8.223v24.26c0 8.36-.612 12.368-2.446 15.833-1.7 3.33-3.942 5.436-8.562 7.747l-9.718-4.62c4.62-2.174 6.863-4.076 8.3-7 1.495-3 1.97-6.456 1.97-15.56V16.16zM44.372.056h10.465v10.737H44.372z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   overflow="visible"
+   fill="#092e20"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="django-icon.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   viewBox="-5 0 64 64"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="13.375"
+     inkscape:cx="27.813084"
+     inkscape:cy="30.056075"
+     inkscape:window-width="1908"
+     inkscape:window-height="1035"
+     inkscape:window-x="6"
+     inkscape:window-y="39"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     d="m 22.559,0 h 10.476 v 48.44 c -5.368,1.02 -9.3,1.427 -13.6,1.427 C 6.659,49.867 0,44.091 0,33.014 c 0,-10.67 7.068,-17.6 18.008,-17.6 1.7,0 3,0.135 4.553,0.543 z m 0,24.383 c -1.223,-0.407 -2.242,-0.543 -3.533,-0.543 -5.3,0 -8.36,3.262 -8.36,8.97 0,5.573 2.922,8.63 8.3,8.63 1.155,0 2.106,-0.068 3.6,-0.27 z M 49.672,16.16 v 24.26 c 0,8.36 -0.612,12.368 -2.446,15.833 -1.7,3.33 -3.942,5.436 -8.562,7.747 l -9.718,-4.62 c 4.62,-2.174 6.863,-4.076 8.3,-7 1.495,-3 1.97,-6.456 1.97,-15.56 V 16.16 Z M 39.207,0.056 H 49.672 V 10.793 H 39.207 Z"
+     id="path2" />
+</svg>

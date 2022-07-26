@@ -177,15 +177,20 @@ h2 {
   padding: 0.4rem;
 }
 
+.tech-content figure {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .tech-content figure figcaption {
-  text-align: center;
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
   font-size: 1.2rem;
   opacity: 0;
   transition: opacity 200ms ease-in-out;
 }
 
-.tech-content figure:hover figcaption {
+.tech-content figure:hover figcaption, .tech-content figure:active figcaption {
   opacity: 1;
 }
 
@@ -261,5 +266,6 @@ h2 {
 
   .hidden-nav {
     opacity: 0;
+    z-index: -1 !important;
   }
 }

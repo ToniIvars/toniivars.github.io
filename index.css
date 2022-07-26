@@ -1,5 +1,5 @@
 :root {
-  --nav-bg: rgba(61, 61, 61, 0.75);
+  --nav-bg: rgba(61, 61, 61, 0.8);
   --sections-bg: rgba(33, 33, 33, 1);
   --main-fg: rgba(255, 255, 255, 0.9);
   --light-fg: rgba(255, 255, 255, 0.2);
@@ -52,16 +52,25 @@ a {
   border-bottom-color: var(--main-fg);
 }
 
+#nav-toggle {
+  display: none;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  height: 2rem;
+  z-index: 2;
+}
+
 /* ---------- Sections ---------- */
 
 .section {
-  padding: 0 3rem;
   background-color: var(--sections-bg);
   min-height: calc(100vh + 4px);
   width: 100%;
   display: grid;
   place-items: center;
   border-bottom: 4px solid var(--light-fg);
+  padding: 3rem 0;
 }
 
 h2 {
@@ -87,6 +96,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 3rem;
 }
 
 /* ---------- About me section ---------- */
@@ -116,24 +126,24 @@ h2 {
   background-color: var(--light-fg);
 }
 
+.github-icon {
+  height: 2rem;
+}
+
 #find-me img {
   margin-left: 0.5rem;
-  height: 2rem;
 }
 
 /* ---------- Technologies section ---------- */
 
-#techs {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
-}
+#techs { padding-top: 4rem; }
 
 #techs .section-content {
   flex-direction: column;
 }
 
 #techs .section-content h2 {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .tech-section {
@@ -142,7 +152,7 @@ h2 {
 
 .tech-section h3 {
   font-size: 2rem;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
   text-align: center;
 }
 
@@ -151,10 +161,7 @@ h2 {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.tech-content figure {
-  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
 .tech-content img {
@@ -172,8 +179,8 @@ h2 {
 
 .tech-content figure figcaption {
   text-align: center;
-  margin-top: 0.25rem;
-  font-size: 1.25rem;
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
   opacity: 0;
   transition: opacity 200ms ease-in-out;
 }
@@ -205,6 +212,11 @@ h2 {
 /* ---------- Media queries ---------- */
 
 @media (max-width: 895px) {
+  .section-content {
+    width: 90%;
+    padding: 0;
+  }
+
   .section-content,
   #about-me .section-text {
     display: flex;
@@ -217,5 +229,37 @@ h2 {
     height: 250px;
     margin-right: 0;
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .tech-content img {
+    height: 5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  #navbar {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .nav-link {
+    border: 3px solid transparent;
+    transition: border-color 200ms ease;
+  }
+  
+  .nav-link.selected {
+    border-color: var(--main-fg);
+  }
+  
+  #nav-toggle {
+    display: block;
+  }
+
+  .hidden-nav {
+    opacity: 0;
   }
 }

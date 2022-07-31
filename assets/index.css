@@ -30,6 +30,7 @@ a {
 #navbar {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -43,6 +44,7 @@ a {
 #links {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .nav-link {
@@ -60,11 +62,29 @@ a {
   border-bottom-color: var(--main-fg);
 }
 
+#switch {
+  position: absolute;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#switch img {
+  height: 1.75rem;
+  transition: filter 200ms ease-in-out;
+}
+
+#switch img:hover {
+  cursor: pointer;
+  filter: brightness(60%);
+}
+
 #nav-toggle {
   display: none;
   position: fixed;
-  right: 20px;
-  top: 20px;
+  right: 1.5rem;
+  top: 1.5rem;
   height: 2rem;
   z-index: 11;
 }
@@ -91,13 +111,6 @@ h2 {
   border: none;
 }
 
-#me-img {
-  border-radius: 50%;
-  background-color: var(--nav-bg);
-  margin-right: 3rem;
-  height: 300px;
-}
-
 .section-content {
   width: 100%;
   max-width: 1000px;
@@ -109,6 +122,13 @@ h2 {
 
 /* ---------- About me section ---------- */
 
+#me-img {
+  border-radius: 50%;
+  background-color: var(--nav-bg);
+  margin-right: 3rem;
+  height: 300px;
+}
+
 #about-me .section-text p {
   margin: 2rem 0;
   font-size: 1.2rem;
@@ -119,8 +139,8 @@ h2 {
 }
 
 #find-me {
-  padding: 0.5rem 0;
-  width: 10rem;
+  padding: 0.5rem 0.75rem;
+  width: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +148,11 @@ h2 {
   background-color: var(--nav-bg);
   border-radius: 5px;
   transition: background-color 200ms ease-in-out;
+}
+
+#about-me #find-me p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 #find-me:hover {
@@ -220,6 +245,8 @@ h2 {
 
 /* ---------- Projects section ---------- */
 
+#projects { padding-top: 4rem; }
+
 #projects .section-content {
   flex-direction: column;
 }
@@ -305,7 +332,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .project-link-container a { display: flex; }
@@ -325,9 +352,10 @@ h2 {
 #other-projects {
   margin-top: 2rem;
   text-decoration: underline;
+  transition: filter 200ms ease-in-out;
 }
 
-#other-projects:hover { color: var(--light-fg); }
+#other-projects:hover { filter: brightness(60%); }
 
 /* ---------- Media queries ---------- */
 
@@ -360,8 +388,11 @@ h2 {
   #navbar {
     height: 100vh;
     flex-direction: column;
-    align-items: center;
     transition: opacity 200ms ease-in-out, z-index 300ms ease-in-out;
+  }
+
+  #links {
+    flex-direction: column;
   }
   
   .nav-link {
@@ -372,6 +403,15 @@ h2 {
   
   .nav-link.selected {
     border-color: var(--main-fg);
+  }
+
+  #switch {
+    right: auto;
+    bottom: 4rem;
+  }
+
+  #switch img {
+    height: 2.5rem;
   }
   
   #nav-toggle {

@@ -10,34 +10,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 
   <link href="assets/index.css" rel="stylesheet" />
   <script src="assets/index.js" defer></script>
+  <script src="assets/translation.js" defer></script>
 </head>
 
 <body>
   <img id="nav-toggle" src="images/other-icons/bar-icon.svg" alt="Nav">
 
   <nav id="navbar">
-    <a data-section="about-me" class="nav-link selected" href="#about-me">About me</a>
-    <a data-section="techs" class="nav-link" href="#techs">Technologies</a>
-    <a data-section="projects" class="nav-link" href="#projects">Projects</a>
+    <div id="links">
+      <a data-section="about-me" data-translate="about-me-nav" class="nav-link selected" href="#about-me">About me</a>
+      <a data-section="techs" data-translate="techs-title" class="nav-link" href="#techs">Technologies</a>
+      <a data-section="projects" data-translate="projects-title" class="nav-link" href="#projects">Projects</a>
+    </div>
+    <div id="switch">
+      <img data-lang="english" src="images/languages-flags/english.svg" alt="English">
+      <img data-lang="spanish" src="images/languages-flags/spanish.svg" alt="Spanish">
+    </div>
   </nav>
 
   <div class="section" id="about-me">
     <div class="section-content">
       <img id="me-img" src="images/me.svg" alt="Me" />
       <div class="section-text">
-        <h2>Hi! I am Toni Ivars</h2>
-        <p>
+        <h2 data-translate="about-me-title">Hi! I am Toni Ivars</h2>
+        <p data-translate="about-me-desc">
           I am a self-taught developer very keen on Python and web
           development. Keep scrolling to find out which technologies I know or some
           projects I have made!
         </p>
         <a href="https://github.com/ToniIvars/" target="_blank" rel="noopener noreferrer" id="find-me">
-          Find me on <img class="github-icon" src="images/other-icons/github-icon.svg" alt="GitHub" />
+          <p data-translate="about-me-find">Find me on</p> <img class="github-icon" src="images/other-icons/github-icon.svg" alt="GitHub" />
         </a>
       </div>
     </div>
@@ -45,9 +52,9 @@
 
   <div class="section" id="techs">
     <div class="section-content">
-      <h2>Technologies</h2>
+      <h2 data-translate="techs-title">Technologies</h2>
       <div class="tech-section">
-        <h3>Languages</h3>
+        <h3 data-translate="techs-langs">Languages</h3>
         <div class="tech-content">
           <figure>
             <img src="images/languages-icons/python-icon.svg" alt="Python">
@@ -66,7 +73,7 @@
             <figcaption id="js-figcaption">Javascript</figcaption>
           </figure>
         </div>
-        <h3>Libraries / Frameworks</h3>
+        <h3 data-translate="techs-libs">Libraries / Frameworks</h3>
         <div class="tech-content">
           <figure>
             <img class="light-bg-icon rounded-icon" src="images/libs-icons/django-icon.svg" alt="Django">
@@ -97,7 +104,7 @@
     <div class="section-content">
       <div id="project-title">
         <img id="prev-project" class="title-icon" src="images/other-icons/arrow-right.svg" alt="Previous" />
-        <h2>Projects</h2>
+        <h2 data-translate="projects-title">Projects</h2>
         <img id="next-project" class="title-icon" src="images/other-icons/arrow-right.svg" alt="Next" />
       </div>
       <div id="projects-slider-container">
@@ -106,15 +113,12 @@
             <img class="project-image" src="images/projects/react-notes.png" />
             <div class="project-description">
               <h3>React Notes</h3>
-              <p>React highschool project that can be used to save your thoughts</p>
+              <p data-translate="projects-desc-react">React project that can be used to save your thoughts</p>
               <p class="project-link-container">
                 <a href="https://react-notes-jet.vercel.app/" target="_blank" rel="noopener noreferrer">
                   <img class="project-link-icon external-icon" src="images/other-icons/external-icon.svg"
                     alt="External" />
                 </a>
-
-                or
-
                 <a href="https://github.com/ToniIvars/react-notes" target="_blank" rel="noopener noreferrer">
                   <img class="project-link-icon" src="images/other-icons/github-icon.svg" alt="GitHub" />
                 </a>
@@ -125,15 +129,12 @@
             <img class="project-image" src="images/projects/django-pokedex.png" />
             <div class="project-description">
               <h3>Django Pokedex</h3>
-              <p>Web app made in Django that aims to be like a Pokedex</p>
+              <p data-translate="projects-desc-django">Web app made with Django that aims to be like a Pokedex</p>
               <p class="project-link-container">
                 <a href="https://django-pokdex.herokuapp.com/" target="_blank" rel="noopener noreferrer">
                   <img class="project-link-icon external-icon" src="images/other-icons/external-icon.svg"
                   alt="External" />
-                </a>
-
-                or
-                
+                </a>                
                 <a href="https://github.com/ToniIvars/django-pokedex" target="_blank" rel="noopener noreferrer">
                   <img class="project-link-icon" src="images/other-icons/github-icon.svg" alt="GitHub" />
                 </a>
@@ -143,16 +144,13 @@
           <div class="project">
             <img class="project-image" src="images/projects/flask-shortener.png" />
             <div class="project-description">
-              <h3>Flask Url Shortener</h3>
-              <p>URL shortener web app made with Python and Flask</p>
+              <h3>Flask Shortener</h3>
+              <p data-translate="projects-desc-flask">URL shortener web app made with Python and Flask</p>
               <p class="project-link-container">
                 <a href="https://flaskshort.herokuapp.com/" target="_blank" rel="noopener noreferrer">
                   <img class="project-link-icon external-icon" src="images/other-icons/external-icon.svg"
                     alt="External" />
                 </a>
-
-                or
-
                 <a href="https://github.com/ToniIvars/flask-url-shortener" target="_blank" rel="noopener noreferrer">
                   <img class="project-link-icon" src="images/other-icons/github-icon.svg" alt="GitHub" />
                 </a>
@@ -163,7 +161,7 @@
             <img class="project-image" src="images/projects/localdrive.png" />
             <div class="project-description">
               <h3>Localdrive</h3>
-              <p>Home cloud (sort of Google Drive) made using Python and Javascript</p>
+              <p data-translate="projects-desc-localdrive">Home cloud (sort of Google Drive) made with Python and Javascript</p>
               <p class="project-link-container">
                 <a href="https://github.com/ToniIvars/Localdrive" target="_blank" rel="noopener noreferrer">
                   <img class="project-link-icon" src="images/other-icons/github-icon.svg" alt="GitHub" />
@@ -175,7 +173,7 @@
             <img class="project-image" src="images/projects/web-automation.png" />
             <div class="project-description">
               <h3>Web Messages Automation</h3>
-              <p>Automate the messages sending using the web with this Python and Selenium project</p>
+              <p data-translate="projects-desc-automation">Automate the messages sending through the web with Python and Selenium</p>
               <p class="project-link-container">
                 <a href="https://github.com/ToniIvars/web-messages-automation" target="_blank" rel="noopener noreferrer">
                   <img class="project-link-icon" src="images/other-icons/github-icon.svg" alt="GitHub" />
@@ -187,7 +185,7 @@
       </div>
 
       <a id="other-projects" href="https://github.com/ToniIvars?tab=repositories" target="_blank"
-        rel="noopener noreferrer">Watch my other GitHub projects</a>
+        rel="noopener noreferrer" data-translate="projects-other">Check out my other Github projects</a>
     </div>
   </div>
 </body>

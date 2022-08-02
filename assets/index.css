@@ -1,10 +1,3 @@
-:root {
-  --nav-bg: rgba(61, 61, 61, 0.8);
-  --sections-bg: rgba(33, 33, 33, 1);
-  --main-fg: rgba(255, 255, 255, 0.9);
-  --light-fg: rgba(255, 255, 255, 0.2);
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +9,11 @@ html {
 }
 
 body {
+  --nav-bg: rgba(61, 61, 61, 0.8);
+  --sections-bg: rgba(33, 33, 33, 1);
+  --main-fg: rgba(255, 255, 255, 0.9);
+  --light-fg: rgba(255, 255, 255, 0.2);
+
   font-family: "Montserrat", sans-serif;
   color: var(--main-fg);
 }
@@ -29,7 +27,7 @@ a {
 
 #navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   top: 0;
@@ -62,9 +60,71 @@ a {
   border-bottom-color: var(--main-fg);
 }
 
+.nav-icon {
+  height: 1.75rem;
+  transition: filter 200ms ease-in-out;
+}
+
+.nav-icon:hover {
+  cursor: pointer;
+  filter: brightness(60%);
+}
+
+@keyframes to-sun {
+  30% {
+    opacity: 0;
+  }
+
+  80% {
+    background-image: url(../images/theme-icons/sun.svg);
+  }
+
+  100% {
+    background-image: url(../images/theme-icons/sun.svg);
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes to-moon {
+  30% {
+    opacity: 0;
+  }
+
+  80% {
+    background-image: url(../images/theme-icons/moon.svg);
+  }
+
+  100% {
+    background-image: url(../images/theme-icons/moon.svg);
+    transform: rotate(-360deg);
+    opacity: 1;
+  }
+}
+
+.theme-icon {
+  width: 2rem;
+  height: 2rem;
+  transition: transform 1s ease-in-out, filter 200ms ease-in-out;
+  background-size: cover;
+  animation-duration: 1.5s;
+  animation-play-state: paused;
+  user-select: none;
+}
+
+.theme-icon[data-theme="dark"] {
+  background-image: url(../images/theme-icons/moon.svg);
+  animation-name: to-sun;
+}
+
+.theme-icon[data-theme="light"] {
+  background-image: url(../images/theme-icons/sun.svg);
+  animation-name: to-moon;
+}
+
+.hidden { display: none; }
+
 #switch {
-  position: absolute;
-  right: 4rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -75,7 +135,7 @@ a {
   transition: filter 200ms ease-in-out;
 }
 
-#switch img:hover {
+#switch img:hover, .theme-icon:hover {
   cursor: pointer;
   filter: brightness(60%);
 }
@@ -285,7 +345,6 @@ h2 {
 
 .title-icon:hover {
   filter: brightness(60%);
-  -webkit-filter: brightness(60%);
 }
 
 #prev-project {
@@ -346,7 +405,6 @@ h2 {
 
 .project-link-icon:hover {
   filter: brightness(60%);
-  -webkit-filter: brightness(60%);
 }
 
 #other-projects {
@@ -356,6 +414,25 @@ h2 {
 }
 
 #other-projects:hover { filter: brightness(60%); }
+
+/* ---------- Light theme ---------- */
+
+body.light {
+  --nav-bg: rgba(194, 194, 194, 0.8);
+  --sections-bg: rgba(240, 240, 240, 1);
+  --main-fg: rgba(0, 0, 0, 0.9);
+  --light-fg: rgba(0, 0, 0, 0.2);
+}
+
+body.light .light-bg-icon { background-color: var(--sections-bg); }
+
+body.light #django-figcaption { color: #092E20; }
+
+body.light #find-me { transition: backdrop-filter 200ms ease-in-out; }
+body.light #find-me:hover { backdrop-filter: brightness(90%); }
+
+body.light :where(.github-icon, .project-link-icon, .title-icon, #nav-toggle) { filter: invert(1); }
+body.light :where(.project-link-icon, .title-icon, #nav-toggle):hover { filter: brightness(40%); }
 
 /* ---------- Media queries ---------- */
 
@@ -404,6 +481,11 @@ h2 {
   .nav-link.selected {
     border-color: var(--main-fg);
   }
+  
+  .theme-icon {
+    width: 3rem;
+    height: 3rem;
+  }
 
   #switch {
     right: auto;
@@ -413,6 +495,7 @@ h2 {
   #switch img {
     height: 2.5rem;
   }
+
   
   #nav-toggle {
     display: block;

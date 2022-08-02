@@ -16,12 +16,15 @@
   <link href="assets/index.css" rel="stylesheet" />
   <script src="assets/index.js" defer></script>
   <script src="assets/translation.js" defer></script>
+  <script src="assets/theme-toggle.js" defer></script>
 </head>
 
 <body>
   <img id="nav-toggle" src="images/other-icons/bar-icon.svg" alt="Nav">
 
   <nav id="navbar">
+    <span class="theme-icon" data-theme="dark"></span>
+    <span class="theme-icon hidden" data-theme="light"></span>
     <div id="links">
       <a data-section="about-me" data-translate="about-me-nav" class="nav-link selected" href="#about-me">About me</a>
       <a data-section="techs" data-translate="techs-title" class="nav-link" href="#techs">Technologies</a>

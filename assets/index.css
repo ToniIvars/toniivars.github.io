@@ -232,28 +232,19 @@ h2 {
 }
 
 #techs .section-content h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .tech-section {
   width: 100%;
-}
-
-.tech-section h3 {
-  font-size: 2rem;
-  margin: 1.5rem 0;
-  text-align: center;
-}
-
-.tech-content {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2.5rem;
 }
 
-.tech-content img {
+.tech-section img {
   height: 6rem;
 }
 
@@ -266,20 +257,20 @@ h2 {
   padding: 0.4rem;
 }
 
-.tech-content figure {
+.tech-section figure {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.tech-content figure figcaption {
+.tech-section figure figcaption {
   margin-top: 0.25rem;
   font-size: 1.2rem;
   opacity: 0;
   transition: opacity 200ms ease-in-out;
 }
 
-.tech-content figure:hover figcaption, .tech-content figure:active figcaption {
+.tech-section figure:hover figcaption, .tech-section figure:active figcaption {
   opacity: 1;
 }
 
@@ -291,7 +282,9 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
-#html-figcaption { color: #E44D26; }
+#docker-figcaption { color: #066DA5; }
+
+#html-figcaption, #git-figcaption { color: #F03C2E; }
 
 #css-figcaption { color: #264DE4; }
 
@@ -506,7 +499,7 @@ body.light :where(.project-link-icon, .title-icon, #nav-toggle):hover { filter: 
     z-index: -1 !important;
   }
 
-  .tech-content img {
+  .tech-section img {
     height: 5rem;
   }
 }
